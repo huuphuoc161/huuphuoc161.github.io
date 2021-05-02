@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Pyspark Python</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/templatemo-style.css" />
+</head>
+
+<body>
+  <div class="tm-page-container mx-auto">
+    <header class="tm-header text-center">
+      <h1 class="tm-title text-uppercase">PYSPARK</h1>
+      <p class="tm-primary-color"><i>Tìm hiểu Apache Spark bằng Python</i></p>
+    </header>
+
+    <section class="tm-section">
+      <nav class="tm-nav">
+        <ul>
+          <li class="active">
+            <a href="index.html"><span class="tm-nav-deco"></span>Intro</a>
+          </li>
+          <li>
+            <a href="machine_learning.html"><span class="tm-nav-deco"></span>Học máy</a>
+          </li>
+          <li>
+            <a href="data_frame.html"><span class="tm-nav-deco"></span>Dataframe</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="tm-content-container">
+        <figure class="mb-0">
+          <img src="img/img_index/img_11.jpg" alt="Image" class="img-fluid tm-img" />
+        </figure>
+        <div class="tm-content">
+          <h2 class="tm-page-title">Tổng quan về PySpark</h2>
+          <p class="mb-4">
+            Trong một thế giới nơi dữ liệu được tạo ra với tốc độ đáng báo động như vậy, việc phân tích chính xác dữ liệu đó vào đúng thời điểm là rất hữu ích. Một trong những khung tuyệt vời nhất để xử lý dữ liệu lớn trong thời gian thực và phân tích thực hiện là Apache Spark, và nếu chúng ta nói về các ngôn ngữ lập trình đang được sử dụng hiện nay để xử lý các nhiệm vụ phân tích dữ liệu và phân tích dữ liệu phức tạp, thì python là một lựa chọn tốt. Vì vậy, trong hướng dẫn PySpark này , chúng ta sẽ thảo luận về các chủ đề sau:
+            <ul> 
+              <li>PySpark là gì?</li> 
+              <li>PySpark trong ngành công nghiệp</li>
+              <li>Spark RDD</li> 
+              <li>Học máy với PySpark</li>
+            </ul>
+          </p>
+
+
+          <h4>PySpark là gì?</h4>
+          <p>
+            Apache Spark là một khung tính toán cụm nhanh được sử dụng để xử lý, truy vấn và phân tích dữ liệu lớn. Dựa trên tính toán trong bộ nhớ, nó có lợi thế hơn một số khung dữ liệu lớn khác.
+          </p>
+          <p>Được viết bằng ngôn ngữ lập trình Scala, cộng đồng nguồn mở đã phát triển một công cụ tuyệt vời để hỗ trợ Python cho Apache Spark. PySpark giúp các nhà khoa học dữ liệu giao tiếp với RDD trong Apache Spark và Python thông qua thư viện Py4j. Có nhiều tính năng giúp PySpark trở thành một khung tốt hơn các tính năng khác:</p>
+          <ul>
+            <li>Tốc độ: Nó nhanh hơn 100 lần so với các khung xử lý dữ liệu quy mô lớn truyền thống.</li>
+            <li>Bộ nhớ đệm mạnh mẽ: Lớp lập trình đơn giản cung cấp khả năng lưu trữ bộ nhớ cache và ổ đĩa mạnh mẽ.</li>
+            <li>Triển khai: Có thể được triển khai thông qua Mesos, Hadoop thông qua Sợi hoặc trình quản lý cụm riêng của Spark.</li>
+            <li>Thời gian thực: Tính toán thời gian thực và độ trễ thấp vì tính toán trong bộ nhớ.</li>
+            <li>Polyglot:  Hỗ trợ lập trình trong Scala, Java, Python và R.</li>
+          </ul>
+
+
+          <h4>PySpark trong ngành công nghiệp</h4>
+          <p>Hãy tiếp tục với hướng dẫn PySpark của chúng tôi và xem Spark được sử dụng trong ngành công nghiệp.</p>
+          <p>Mọi ngành công nghiệp đều xoay quanh dữ liệu lớn và nơi có dữ liệu lớn, có phân tích liên quan. Vì vậy, hãy xem xét các ngành công nghiệp khác nhau nơi Apache Spark được sử dụng.</p>
+          <figure class="mb-0">
+          <img src="img/img_index/img_12.jpg" alt="Image" class="img-fluid tm-img" />
+          </figure>
+          <p>Truyền thông là một trong những ngành công nghiệp lớn nhất phát triển theo hướng phát trực tuyến. Netflix sử dụng Apache Spark để xử lý luồng thời gian thực để cung cấp các đề xuất trực tuyến được cá nhân hóa cho khách hàng của mình. Nó xử lý 450 tỷ sự kiện mỗi ngày chảy vào các ứng dụng phía máy chủ.</p>
+          <figure class="mb-0">
+          <img src="img/img_index/img_13.jpg" alt="Image" class="img-fluid tm-img" />
+          </figure>
+          <p>Tài chính là một lĩnh vực khác mà việc xử lý thời gian thực của Apache Spark đóng vai trò quan trọng. Các ngân hàng đang sử dụng Spark để truy cập và phân tích hồ sơ truyền thông xã hội để hiểu rõ hơn có thể giúp họ đưa ra quyết định kinh doanh đúng đắn để đánh giá rủi ro tín dụng , quảng cáo được nhắm mục tiêu và phân khúc khách hàng. Khách hàng cũng giảm thời gian sử dụng Spark. Phát hiện gian lận là một trong những lĩnh vực được sử dụng rộng rãi nhất trong học máy mà Spark có liên quan.</p>
+          <figure class="mb-0">
+          <img src="img/img_index/img_14.jpg" alt="Image" class="img-fluid tm-img" />
+          </figure>
+          <p>Các nhà cung cấp dịch vụ chăm sóc sức khỏe đang sử dụng Apache Spark để phân tích hồ sơ bệnh nhân cùng với dữ liệu lâm sàng trong quá khứ để xác định bệnh nhân nào có khả năng phải đối mặt với các vấn đề sức khỏe sau khi được xuất viện. Apache Spark được sử dụng trong giải trình tự bộ gen để giảm thời gian cần thiết để xử lý dữ liệu bộ gen.</p>
+          <figure class="mb-0">
+          <img src="img/img_index/img_15.jpg" alt="Image" class="img-fluid tm-img" />
+          </figure>
+          <p>Bán lẻ và thương mại điện tử là một ngành mà người ta không thể tưởng tượng nó đang chạy mà không sử dụng phân tích và quảng cáo được nhắm mục tiêu. Một trong những nền tảng thương mại điện tử lớn nhất hiện nay, Alibabarun một số công việc Spark lớn nhất trên thế giới để phân tích petabyte dữ liệu. Alibaba thực hiện trích xuất tính năng trong dữ liệu hình ảnh. eBay sử dụng Apache Spark để cung cấp các ưu đãi được nhắm mục tiêu, nâng cao trải nghiệm của khách hàng và tối ưu hóa hiệu suất tổng thể.</p>
+          <figure class="mb-0">
+          <img src="img/img_index/img_16.jpg" alt="Image" class="img-fluid tm-img" />
+          </figure>
+          <p>Các ngành công nghiệp du lịch cũng sử dụng Apache Spark. TripAdvisor , một trang web du lịch hàng đầu giúp người dùng lên kế hoạch cho một chuyến đi hoàn hảo, đang sử dụng Apache Spark để tăng tốc các đề xuất tùy chỉnh được cá nhân hóa. TripAdvisor sử dụng Apache Spark để cung cấp lời khuyên cho hàng triệu khách du lịch bằng cách so sánh hàng trăm trang web để tìm giá khách sạn tốt nhất cho khách hàng của mình.</p>
+
+          <u>Một khía cạnh quan trọng của hướng dẫn PySpark này là để hiểu lý do tại sao chúng ta cần sử dụng Python. Tại sao không phải là Java, Scala hay R?</u>
+          <ul>
+            <li>Dễ học: Đối với lập trình viên, Python tương đối dễ học hơn vì cú pháp và thư viện chuẩn của nó. Hơn nữa, đây là ngôn ngữ được gõ động, có nghĩa là RDD có thể chứa các đối tượng thuộc nhiều loại.</li>
+            <li>Một bộ thư viện khổng lồ: Scala không có đủ các công cụ và thư viện khoa học dữ liệu như Python để học máy và xử lý ngôn ngữ tự nhiên. Hơn nữa, Scala thiếu hình ảnh tốt và biến đổi dữ liệu cục bộ.</li>
+            <li>Hỗ trợ cộng đồng khổng lồ: Python có một cộng đồng toàn cầu với hàng triệu nhà phát triển tương tác trực tuyến và ngoại tuyến ở hàng ngàn vị trí ảo và thực.</li>
+          </ul>
+          <p>Một trong những chủ đề quan trọng nhất trong hướng dẫn PySpark này là việc sử dụng RDD. Hãy hiểu RDD là gì.</p>
+          <h4>Spark RDD</h4>
+          <p>Khi nói đến điện toán phân tán lặp, tức là xử lý dữ liệu qua nhiều công việc trong tính toán, chúng ta cần sử dụng lại hoặc chia sẻ dữ liệu giữa nhiều công việc. Các khung trước đó như Hadoop có vấn đề trong khi xử lý nhiều hoạt động / công việc như:</p>
+          <ul>
+            <li>Lưu trữ dữ liệu trong bộ lưu trữ trung gian như HDFS.</li>
+            <li>Nhiều công việc I / O làm cho việc tính toán chậm.</li>
+            <li>Sao chép và tuần tự hóa mà lần lượt làm cho quá trình thậm chí chậm hơn.</li>
+          </ul>
+          <p>RDD cố gắng giải quyết tất cả các vấn đề bằng cách cho phép tính toán trong bộ nhớ phân phối chịu lỗi. RDD là viết tắt của Bộ dữ liệu phân tán linh hoạt. RDD là một bản tóm tắt bộ nhớ phân tán cho phép các lập trình viên thực hiện các tính toán trong bộ nhớ trên các cụm lớn theo cách chịu lỗi. Chúng là tập hợp các đối tượng chỉ đọc được phân vùng trên một tập hợp các máy có thể được xây dựng lại nếu phân vùng bị mất. Có một số hoạt động được thực hiện trên RDD:</p>
+          <ul>
+            <li>Biến đổi: Biến đổi tạo ra một tập dữ liệu mới từ một dữ liệu hiện có. Đánh giá lười biếng.</li>
+            <li>Hành động: Spark buộc các tính toán chỉ thực hiện khi các hành động được gọi trên RDD.</li>
+          </ul>
+          <p>Chúng ta hãy hiểu một vài biến đổi, hành động và chức năng.</p>
+          <b>Đọc tệp và hiển thị các phần tử n hàng đầu:</b>
+          <figure class="mb-0">
+          <img src="img/img_index/img_21.jpg" alt="Image" class="img-fluid tm-img" />
+          </figure>
+          <b>Chuyển đổi thành chữ thường và chia tách: (Hạ và tách)</b>
+          <figure class="mb-0">
+          <img src="img/img_index/img_22.jpg" alt="Image" class="img-fluid tm-img" />
+          </figure>
+          <figure class="mb-0">
+          <img src="img/img_index/img_23.jpg" alt="Image" class="img-fluid tm-img" />
+          </figure>
+          <b>Xóa Stopword: (Bộ lọc)</b>
+          <figure class="mb-0">
+          <img src="img/img_index/img_24.jpg" alt="Image" class="img-fluid tm-img" />
+          </figure>
+          <b>Tổng các số từ 1 đến 500: (Giảm)</b>
+          <figure class="mb-0">
+          <img src="img/img_index/img_25.jpg" alt="Image" class="img-fluid tm-img" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pyspark Dataframe</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/templatemo-style.css" />
+<!--
+Verticard Template
+https://templatemo.com/tm-533-verticard
+
+Template re-distribution is NOT allowed on any kind of download website. Thank you.
+
+-->
+</head>
+
+<body>
+    <div class="tm-page-container mx-auto">
+        <header class="tm-header text-center">
+            <h1 class="tm-title text-uppercase">Pyspark Dataframe</h1>
+            <p class="tm-primary-color"><i>Tìm hiểu về DataFrames trong Pyspark</i></p>
+        </header>
+
+        <section class="tm-section">
+            <nav class="tm-nav">
+                <ul>
+                    <li>
+                        <a href="index.html"><span class="tm-nav-deco"></span>Intro</a>
+                    </li>
+                    <li>
+                        <a href="machine_learning.html"><span class="tm-nav-deco"></span>Học máy</a>
+                    </li>
+                    <li class="active">
+                        <a href="data_frame.html"><span class="tm-nav-deco"></span>Dataframe</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="tm-content-container">
+            <figure class="mb-0">
+              <img src="img/img_dataf/img_51.png" alt="Image" class="img-fluid tm-img" />
+            </figure>
+            <div class="tm-content">
+              <h2 class="tm-page-title">Tổng quan về Dataframe</h2>
+              <p>DataFrames là một từ thông dụng trong ngành công nghiệp ngày nay. Mọi người có xu hướng sử dụng nó với các ngôn ngữ phổ biến được sử dụng cho Phân tích dữ liệu như Python, Scala và R. Vậy, tại sao mọi người lại sử dụng nó nhiều như vậy? Chúng ta hãy xem điều này với hướng dẫn PySpark Dataframe của chúng tôi. Trong bài đăng này, tôi sẽ đề cập đến các chủ đề sau:</p>
+              <ul>
+                  <li>DataFrames là gì?</li>
+                  <li>Tại sao chúng ta cần DataFrames?</li>
+                  <li>Các tính năng của DataFrames</li>
+                  <li>Nguồn dữ liệu của PySpark</li>
+                  <li>Tạo khung dữ liệu</li>
+                  <li>Pyspark DataFrames với FIFA World Cup và Superheroes Dataset</li>
+              </ul>
+              <h4>Hướng dẫn về khung dữ liệu của PySpark: DataFrames là gì?</h4>
+              <p>DataFrames thường đề cập đến một cấu trúc dữ liệu, về bản chất là dạng bảng. Nó đại diện cho các hàng, mỗi hàng bao gồm một số quan sát. Các hàng có thể có nhiều định dạng dữ liệu (không đồng nhất), trong khi một cột có thể có dữ liệu cùng loại (đồng nhất). DataFrames thường chứa một số siêu dữ liệu ngoài dữ liệu; ví dụ, tên cột và hàng.</p>
+              <figure class="mb-0">
+              <img src="img/img_dataf/img_52.jpg" alt="Image" class="img-fluid tm-img" />
+              </figure>
+              <p>Chúng ta có thể nói rằng DataFrames không là gì, ngoài các cấu trúc dữ liệu 2 chiều, tương tự như bảng SQL hoặc bảng tính. Bây giờ, hãy tiếp tục với Hướng dẫn về khung dữ liệu PySpark này và hiểu lý do tại sao chính xác chúng ta cần Pyspark Dataframe.</p>
+              <h4>Tại sao chúng ta cần DataFrames?</h4>
+              <b>Xử lý dữ liệu có cấu trúc và bán cấu trúc</b>
+              <p>DataFrames được thiết kế để xử lý một tập hợp lớn dữ liệu có cấu trúc cũng như bán cấu trúc . Các quan sát trong Spark DataFrame được tổ chức dưới các cột được đặt tên, giúp Apache Spark hiểu sơ đồ của Dataframe. Điều này giúp Spark tối ưu hóa kế hoạch thực hiện trên các truy vấn này. Nó cũng có thể xử lý petabyte dữ liệu.</p>
+              <b>Cắt </b>
+              <p>API DataFrames thường hỗ trợ các phương thức phức tạp để cắt và xử lý dữ liệu. Nó bao gồm các hoạt động như "chọn" các hàng, cột và ô theo tên hoặc theo số, lọc ra các hàng, v.v. Dữ liệu thống kê thường rất lộn xộn và chứa nhiều giá trị thiếu và không chính xác và vi phạm phạm vi. Vì vậy, một tính năng cực kỳ quan trọng của DataFrames là quản lý rõ ràng dữ liệu bị thiếu.</p>
+              <b>Nguồn dữ liệu</b>
+                <p>DataFrames đã hỗ trợ cho một loạt các định dạng và nguồn dữ liệu, chúng ta sẽ xem xét vấn đề này sau trong hướng dẫn Pyspark DataFrames này. Họ có thể lấy dữ liệu từ nhiều nguồn khác nhau.</p>
+                <b>Hỗ trợ nhiều ngôn ngữ</b>
+                <p>Nó có hỗ trợ API cho các ngôn ngữ khác nhau như Python, R, Scala, Java, giúp mọi người có nền tảng lập trình khác nhau dễ sử dụng hơn.</p>
+                <h4>Các tính năng của DataFrames</h4>
+
+            <figure class="mb-0">
+              <img src="img/img_dataf/img53.jpg" alt="Image" class="img-fluid tm-img" />
+              </figure>
+              <ul>
+                  <li>DataFrames được phân phối trong tự nhiên, làm cho nó có cấu trúc dữ liệu có khả năng chịu lỗi và có tính sẵn sàng cao.</li>
+                  <li>Đánh giá lười biếng là một chiến lược đánh giá giữ đánh giá biểu thức cho đến khi cần giá trị của nó. Nó tránh đánh giá lặp đi lặp lại. Đánh giá lười biếng trong Spark có nghĩa là việc thực thi sẽ không bắt đầu cho đến khi một hành động được kích hoạt. Trong Spark, hình ảnh đánh giá lười biếng xuất hiện khi biến đổi Spark xảy ra.</li>
+                  <li>DataFrames là bất biến trong tự nhiên. Bằng cách bất biến, ý tôi là nó là một đối tượng có trạng thái không thể sửa đổi sau khi nó được tạo. Nhưng chúng ta có thể biến đổi các giá trị của nó bằng cách áp dụng một phép biến đổi nhất định, như trong RDD.</li>
+
+              </ul>
+              <h4>Nguồn dữ liệu của PySpark</h4>
+              <p>DataFrames trong Pyspark có thể được tạo theo nhiều cách</p>
+              <figure class="mb-0">
+              <img src="img/img_dataf/img_54.jpg" alt="Image" class="img-fluid tm-img" />
+              </figure>
+              <p>Dữ liệu có thể được tải thông qua tệp CSV, JSON, XML  hoặc tệp Parquet. Nó cũng có thể được tạo bằng RDD hiện có và thông qua bất kỳ cơ sở dữ liệu nào khác, như Hive hoặc Cassandra . Nó cũng có thể lấy dữ liệu từ HDFS hoặc hệ thống tệp cục bộ.</p>
+
+                <p>Hãy tiếp tục với hướng dẫn PySpark DataFrame này và hiểu cách tạo DataFrames.</p>
+
+                <p>Chúng tôi sẽ tạo  Employee và các  Department trường hợp.</p>
+            <figure class="mb-0">
+              <img src="img/img_dataf/img_55.jpg" alt="Image" class="img-fluid tm-img" />
+              </figure>
+              <p>Tiếp theo, chúng tôi sẽ tạo một  DepartmentWithEmployees ví dụ từ  Employee một nd  Departments.</p>
+              <p>departmentWithEmployees1 = Row(department=department1, employees=[employee1, employee2, employee5])</p>
+
+              <p>Hãy tạo DataFrame của chúng tôi từ danh sách các hàng</p>
+
+              <figure class="mb-0">
+              <img src="img/img_dataf/img_56.jpg" alt="Image" class="img-fluid tm-img" />
+              </figure>
+
+              <h4>Pyspark DataFrames Ví dụ 1: Bộ dữ liệu FIFA World Cup</h4>
+              <p>Ở đây chúng tôi đã lấy Bộ dữ liệu cầu thủ FIFA World Cup. Chúng tôi sẽ tải dữ liệu này ở định dạng CSV vào DataFrame và sau đó chúng tôi sẽ tìm hiểu về các biến đổi và hành động khác nhau có thể được thực hiện trên DataFrame này.</p>
+              <b>Đọc dữ liệu từ tệp CSV</b>
+              <p>Hãy tải dữ liệu từ tệp CSV. Ở đây chúng ta sẽ sử dụng phương thức spark.read.csv để tải dữ liệu vào DataFrame , fifa_df. Phương thức thực tế là spark.read.format [csv / json] .</p>
+
+              <figure class="mb-0">
+              <img src="img/img_dataf/img_57.jpg" alt="Image" class="img-fluid tm-img" />
+              </figure>
+              <figure class="mb-0">
+              <img src="img/img_dataf/img_58.jpg" alt="Image" class="img-fluid tm-img" />
+              </figure>
+
+              <b>Lược đồ của DataFrame</b>
+              <p>Để xem sơ đồ, tức là cấu trúc của DataFrame, chúng ta sẽ sử dụng phương thức printSchema . Điều này sẽ cung cấp cho chúng tôi các cột khác nhau trong DataFrame của chúng tôi, cùng với loại dữ liệu và các điều kiện không thể thực hiện được cho cột cụ thể đó.</p>
+              <figure class="mb-0">
+              <img src="img/img_dataf/img_59.jpg" alt="Image" class="img-fluid tm-img" />
+              </figure>
+
+              <b>Tên cột và Đếm (Hàng và Cột)</b>
+              <p>Khi chúng tôi muốn xem tên và số lượng hàng và cột của một DataFrame cụ thể, chúng tôi sử dụng các phương pháp sau.</p>
+              <figure class="mb-0">
+              <img src="img/img_dataf/img_60.jpg" alt="Image" class="img-fluid tm-img" />
+              </figure>
+              <b>Mô tả một cột đặc biệt</b>
+              <p>Nếu chúng ta muốn xem tóm tắt về bất kỳ cột cụ thể nào của DataFrame, chúng tôi sử dụng describe phương thức này. Phương pháp này cung cấp cho chúng tôi bản tóm tắt thống kê của cột đã cho, nếu không được chỉ định, nó cung cấp tóm tắt thống kê của DataFrame.</p>
+              <figure class="mb-0">
+              <img src="img/img_dataf/img_61.jpg" alt="Image" class="img-fluid tm-img" />
+              </figure>
+              <b>Chọn nhiều cột</b>
+              <p>Nếu chúng tôi muốn chọn các cột cụ thể từ DataFrame, chúng tôi sử dụng  select phương thức.</p>
+              <b>fifa_df.select('Player Name','Coach Name').show()</b>
+
+              <b>Lọc dữ liệu</b>
+              <p>Để lọc dữ liệu, theo điều kiện được chỉ định, chúng tôi sử dụng  filter lệnh. Ở đây, chúng tôi đang lọc DataFrame của chúng tôi dựa trên điều kiện ID đối sánh phải bằng 1096 và sau đó chúng tôi đang tính toán có bao nhiêu bản ghi / hàng trong đầu ra được lọc.</p>
+              <b>fifa_df.filter(fifa_df.MatchID=='1096').show()</b>
+ 
+                <b>fifa_df.filter(fifa_df.MatchID=='1096').count()  //to get the count</b>
+                 <figure class="mb-0">
+              <img src="img/img_dataf/img_62.jpg" alt="Image" class="img-fluid tm-img" />
+              </figure>
+              <b>Sắp xếp dữ liệu (OrderBy)</b>
+              <p>Để sắp xếp dữ liệu chúng tôi sử dụng  OrderBy phương pháp. Theo mặc định, nó sắp xếp theo thứ tự tăng dần, nhưng chúng ta cũng có thể thay đổi nó theo thứ tự giảm dần.</p>
+              <b>fifa_df.orderBy(fifa_df.MatchID).show()</b>
+              <figure class="mb-0">
+              <img src="img/img_dataf/img_63.jpg" alt="Image" class="img-fluid tm-img" />
+              </figure>
+            </section>
+    </div>
+</body>
+
+</html>

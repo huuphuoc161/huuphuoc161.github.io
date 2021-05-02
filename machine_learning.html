@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Machine Learning with Pyspark</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <!-- Magnific Popup core CSS file -->
+  <link rel="stylesheet" href="css/magnific-popup.css" />
+  <link rel="stylesheet" href="css/templatemo-style.css" />
+
+</head>
+
+<body>
+  <div class="tm-page-container mx-auto">
+    <header class="tm-header text-center">
+      <h1 class="tm-title text-uppercase">Học máy với PySpark</h1>
+    </header>
+
+    <div class="tm-section">
+      <nav class="tm-nav">
+        <ul>
+          <li>
+            <a href="index.html"><span class="tm-nav-deco"></span>Intro</a>
+          </li>
+          <li class="active">
+            <a href="machine_learning.html"><span class="tm-nav-deco"></span>Học máy</a>
+          </li>
+          <li>
+            <a href="data_frame.html"><span class="tm-nav-deco"></span>Dataframe</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="tm-content-container">
+        <figure class="mb-0">
+          <img src="img/img_malearn/img_31.jpeg" alt="Image" class="img-fluid tm-img" />
+        </figure>
+        <div class="tm-content">
+        <p>Tiếp theo chúng ta sẽ cùng tìm hiểu về học máy (machine learning) trong pyspark.</p>
+        <p>Apache Spark, từng là một thành phần của hệ sinh thái Hadoop, hiện đang trở thành nền tảng dữ liệu lớn được các doanh nghiệp lựa chọn. Đây là một công cụ mã nguồn mở mạnh mẽ cung cấp khả năng xử lý luồng thời gian thực, xử lý tương tác, xử lý đồ thị, xử lý trong bộ nhớ cũng như xử lý hàng loạt với tốc độ rất nhanh, dễ sử dụng và giao diện chuẩn.
+        Trong ngành, nhu cầu lớn về một động cơ mạnh mẽ có thể làm được tất cả những điều trên. Không sớm thì muộn, công ty của bạn hoặc khách hàng của bạn sẽ sử dụng Spark để phát triển các mô hình phức tạp cho phép bạn khám phá các cơ hội mới hoặc tránh rủi ro.</p>
+        <p>Để dễ dàng hơn trong việc tìm hiểu, chúng ta sẽ cùng tìm hiểu về một ví dụ là về xử lý dữ liệu của các cầu thủ NBA từ năm 1980 đến nay. Ở đây chúng tôi sẽ sử dụng dữ liệu của tất cả các cầu thủ tại NBA kể từ năm 1980.</p>
+        <figure class="mb-0">
+          <img src="img/img_malearn/img_32.jpg" alt="Image" class="img-fluid tm-img" />
+        </figure>
+
+        <figure class="mb-0">
+          <img src="img/img_malearn/img_33.jpg" alt="Image" class="img-fluid tm-img" />
+        </figure>
+        
+        <p>Ở đây chúng tôi đang sắp xếp người chơi dựa trên số điểm ghi được trong một mùa.</p>
+        <b>df.orderBy('pts',ascending = False).limit(10).toPandas()[['yr','player','age','pts','fg3']]
+        </b>
+        <figure class="mb-0">
+          <img src="img/img_malearn/img_34.jpg" alt="Image" class="img-fluid tm-img" />
+        </figure>
+        <h4>Sử dụng DSL và matplotlib</h4>
+        <p>Ở đây chúng tôi đang phân tích số lần thử trung bình 3 điểm cho mỗi mùa trong giới hạn thời gian là 36 phút  [một khoảng thời gian tương ứng với một trận đấu NBA gần đúng với phần còn lại đầy đủ]. Chúng tôi tính toán số liệu này bằng cách sử dụng số lần thử mục tiêu trường 3 điểm (fg3a) và số phút đã chơi (mp) và sau đó vẽ kết quả bằng cách sử dụng matlplotlib.</p>
+        <figure class="mb-0">
+          <img src="img/img_malearn/img_35.jpg" alt="Image" class="img-fluid tm-img" />
+        </figure>
+        <p></p>
+        <figure class="mb-0">
+          <img src="img/img_malearn/img_36.jpg" alt="Image" class="img-fluid tm-img" />
+        </figure>
+        <figure class="mb-0">
+          <img src="img/img_malearn/img_37.jpg" alt="Image" class="img-fluid tm-img" />
+        </figure>
+
+        <h4>Hồi quy tuyến tính và VectorAssembler</h4>
+        <p>Chúng ta có thể điều chỉnh mô hình hồi quy tuyến tính cho đường cong này để mô hình số lần thử bắn trong 5 năm tới. Chúng ta phải chuyển đổi dữ liệu của mình bằng cách sử dụng  VectorAssembler hàm thành một cột duy nhất. Đây là một yêu cầu cho API hồi quy tuyến tính trong MLlib.</p>
+        <figure class="mb-0">
+          <img src="img/img_malearn/img_38.jpg" alt="Image" class="img-fluid tm-img" />
+        </figure>
+        <figure class="mb-0">
+          <img src="img/img_malearn/img_39.jpg" alt="Image" class="img-fluid tm-img" />
+        </figure>
+
+        <p>Sau đó chúng tôi xây dựng đối tượng mô hình hồi quy tuyến tính bằng cách sử dụng dữ liệu được chuyển đổi của chúng tôi.</p>
+        <figure class="mb-0">
+          <img src="img/img_malearn/img_40.jpg" alt="Image" class="img-fluid tm-img" />
+        </figure>
+        <b>Áp dụng mô hình được đào tạo vào bộ dữ liệu</b>
+        <p>Chúng tôi áp dụng mô hình đối tượng mô hình được đào tạo của mình vào tập huấn luyện ban đầu cùng với 5 năm dữ liệu trong tương lai</p>
+        <figure class="mb-0">
+          <img src="img/img_malearn/img_41.jpg" alt="Image" class="img-fluid tm-img" />
+        </figure>
+        <b>Vẽ sơ đồ dự đoán cuối cùng</b>
+        <p>Sau đó, chúng tôi có thể vẽ kết quả của chúng tôi và lưu biểu đồ ở một vị trí được chỉ định.</p>
+
+        <figure class="mb-0">
+          <img src="img/img_malearn/img_42.jpg" alt="Image" class="img-fluid tm-img" />
+        </figure>
+        </div>
+    </div>
+  </div>
+</div>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Magnific Pop up
+      // https://dimsemenov.com/plugins/magnific-popup/
+      $('.tm-gallery').magnificPopup({
+        delegate: 'a', // child items selector, by clicking on it popup will open
+        type: 'image',
+        gallery: {
+          enabled: true
+        },
+      });
+    });
+  </script>
+
+</body>
+</html>
